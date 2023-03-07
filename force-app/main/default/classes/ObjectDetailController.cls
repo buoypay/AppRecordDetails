@@ -15,8 +15,8 @@ public class ObjectDetailController {
             String test1 = '[{"SecName":"Account","FieldList":["Website","Phone","AccountNumber"]}]';
             ObjectDeatilsConfig__mdt config = new ObjectDeatilsConfig__mdt();
             config.SectionFieldMapping__c = test1;
-            config.DeveloperName = "AccountPage";
-            configs.add(new )
+            config.DeveloperName = 'AccountPage';
+            configs.add(new );
         }
 
             for(ObjectDeatilsConfig__mdt conf :configs){
