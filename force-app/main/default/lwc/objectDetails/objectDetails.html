@@ -20,7 +20,7 @@
 
     <template if:true={isViewVisible} >
     <lightning-record-view-form
-        record-id={recordId}
+        record-id={childFieldId}
         object-api-name={objName}
         onload={handleViewLoad}>
         
@@ -67,7 +67,7 @@
     <template if:true={isEditVisible} >
 
         <lightning-record-edit-form
-                    record-id={recordId}
+                    record-id={childFieldId}
                     object-api-name={objName} onload={handleEditLoad} onsuccess={handleSuccess}>
             <div id="idxRecordEdit" class="slds-hide" style="box-shadow: 0 2px 4px 4px rgba(0,0,0,.16); padding: 1rem 1rem;">
                 <template iterator:it={configData}>

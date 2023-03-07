@@ -10,6 +10,7 @@
     <targetConfigs>
         <targetConfig targets="lightning__RecordPage">
             <property name="objName" type="String" required="true" label="Object Api" description="API name is case sensative"/>
+            <property name="childFieldName" type="String" required="false" label="Child Field Name" description="Child Details"/>
             <property name="configName" type="String" required="true" label="Metadata Developer Name" description="Metadata record name to drive the detail section (A new record will be created with the given name if existing name is not found, API Name can only contain underscores and alphanumeric characters without spaces)"/>
             <property name="profileNames" type="String"  label="Profile Names" default="System Administrator" description="Comma separated profile names to get configuration access of detail page"/>
             <supportedFormFactors>

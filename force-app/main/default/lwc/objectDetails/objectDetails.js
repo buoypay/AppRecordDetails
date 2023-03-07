@@ -16,6 +16,8 @@ export default class objectDetails extends LightningElement {
     @track isStencilVisible;
     @track focusFieldApi;
     @api profileNames;
+    @api childFieldName;
+
     isConfigVisible = false;
     isDetailVisible = true;
     isFirstLoad = false;
@@ -49,6 +51,10 @@ export default class objectDetails extends LightningElement {
         }    
     }
 
+    
+    @wire(getRecord, { recordId: '$recordId', layoutTypes: 'Full' })
+    record;
+
      /* 
     *  Info: This wire mothod is invoking uiApi to get context users information information
     *  Params: configName-Config name of metadata
@@ -69,6 +75,15 @@ export default class objectDetails extends LightningElement {
             this.configData = undefined;
         }
     }
+
+    
+    get childFieldId() {
+        if(!this.childFieldName || this.childFieldName == '') {
+        return this.recordId
+        }
+        return this.record.data ? this.record.data.fields[this.childFieldName].value : '';
+    }
+
     /*  
     *  Info: Toggles section to collaps and expand
     *  Params: event
