@@ -10,6 +10,10 @@ public class ObjectDetailControllerTest {
             String test1 = '[{"SecName":"Account","FieldList":["Website","Phone","AccountNumber"]}]';
 
             ObjectDetailController.updateDetailsConfig('AccountPage',test1);
+
+            detailsWrapList = ObjectDetailController.getObjectDetailConfig('AccountPage','Account');
+            system.assert(detailsWrapList.size()>1);
+
          
         Test.stopTest();
      }  
