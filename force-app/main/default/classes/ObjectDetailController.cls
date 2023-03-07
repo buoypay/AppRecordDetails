@@ -16,7 +16,7 @@ public class ObjectDetailController {
             ObjectDeatilsConfig__mdt config = new ObjectDeatilsConfig__mdt();
             config.SectionFieldMapping__c = test1;
             config.DeveloperName = 'AccountPage';
-            configs.add(new );
+            configs.add(config);
         }
 
             for(ObjectDeatilsConfig__mdt conf :configs){
