@@ -90,7 +90,7 @@ public class ObjectDetailController {
         }
 
 
-         //Database.upsert(configObj);
+         Database.upsert(configObj);
     }
 
     //Wraper class
