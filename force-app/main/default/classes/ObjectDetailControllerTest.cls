@@ -13,6 +13,7 @@ public class ObjectDetailControllerTest {
 
             detailsWrapList = ObjectDetailController.getObjectDetailConfig('AccountPage','Account');
             system.assert(detailsWrapList.size()>1);
+            system.assertEquals(detailsWrapList[0].secName,'Account');
 
          
         Test.stopTest();
