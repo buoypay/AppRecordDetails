@@ -66,11 +66,11 @@ public class ObjectDetailController {
         if(configName != NULL && configData != NULL){
              
             customMetadata =  new Metadata.CustomMetadata();
-            customMetadata.fullName = 'APRD__ObjectDeatilsConfig.'+configName;
+            customMetadata.fullName = 'ObjectDeatilsConfig.'+configName;
             customMetadata.label = configName;
             
             customField = new Metadata.CustomMetadataValue();
-            customField.field = 'APRD__SectionFieldMapping__c';
+            customField.field = 'SectionFieldMapping__c';
             customField.value = configData;
     
             mdContainer = new Metadata.DeployContainer();
@@ -90,7 +90,7 @@ public class ObjectDetailController {
         }
 
 
-         Database.upsert(configObj);
+        // Database.upsert(configObj);
     }
 
     //Wraper class
