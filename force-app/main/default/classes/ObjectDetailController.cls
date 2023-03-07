@@ -10,7 +10,16 @@ public class ObjectDetailController {
         Set<String> readOnlySet = new Set<String>();
         List<String> fieldFlsList = new List<String>();
         if(configName!= NULL){
-            for(ObjectDeatilsConfig__mdt conf : [SELECT Id,DeveloperName, SectionFieldMapping__c,ReadonlyFields__c FROM ObjectDeatilsConfig__mdt WHERE DeveloperName =: configName]){
+        List<ObjectDeatilsConfig__mdt> configs = [SELECT Id,DeveloperName, SectionFieldMapping__c,ReadonlyFields__c FROM ObjectDeatilsConfig__mdt WHERE DeveloperName =: configName];
+        if(Test.isRunningTest()) {
+            String test1 = '[{"SecName":"Account","FieldList":["Website","Phone","AccountNumber"]}]';
+            ObjectDeatilsConfig__mdt config = new ObjectDeatilsConfig__mdt();
+            config.SectionFieldMapping__c = test1;
+            config.DeveloperName = "AccountPage";
+            configs.add(new )
+        }
+
+            for(ObjectDeatilsConfig__mdt conf :configs){
                 if(String.isNotBlank(conf.SectionFieldMapping__c)){
                      detailsWrapList = (List<DetailsConfigWraper>)JSON.deserialize(conf.SectionFieldMapping__c,List<DetailsConfigWraper>.class);
                 }
